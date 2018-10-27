@@ -1,1 +1,2 @@
-# www-sovellukset
+# www-sovellukset kurssin harkkatehtävien / harkkatyön materiaalia
+
