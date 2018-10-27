@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+
+<head>
+  <title>Lista Vue + Materialize</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="style.css">
+  <!-- Compiled and minified materialize JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <!-- Vue development version, includes helpful console warnings -->
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <!-- Oma js koodi -->
+  <script src="app.js"></script>
+
+<body>
+  <nav class="indigo">
+    <div class="nav-wrapper container">
+      <a href="#" class="brand-logo right"> <i class="material-icons">library_add</i></a>
+      <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+      <ul id="nav-mobile" class="left hide-on-med-and-down">
+      </ul>
+    </div>
+  </nav>
+  <div class="card-panel brown lighten-2">Pauli autobongarin kirjanpito</div>
+  </div>
+  <div id="brand-list-example" class="blue-gray darken-1">
+    <form v-on:submit.prevent="addNewBrand">
+      <label for="new-brand" class="col s8 m10 l2 section">
+        <h5>Lisää bongattu automerkki</h5>
+      </label>
+      <input v-model="newBrandText" id="new-brand" placeholder="Audi, Volvo, Jaguar..">
+      <button class="btn waves-effect waves-light">Lisää<i class="material-icons right">note_add</i></button>
+    </form>
+    <ul class="collection">
+      <li class="collection-item" is="brand-item" v-for="(brand, index) in brands" v-bind:key="brand.id" v-bind:title="brand.title" v-on:remove="brands.splice(index, 1)"></li>
+    </ul>
+  </div>
+  </div>
+
+
+</body>
+</head>
+
+</html>
